@@ -1,0 +1,90 @@
+.nav {
+  position: fixed;
+  top: 16px;
+  padding-left: 16px;
+
+  &__line {
+    height: 86px;
+    width: 5px;
+    background-color: $blue;
+  }
+
+}
+.home {
+  &__section {
+    height: 100vh;
+  }
+  .__title {
+    margin-bottom: 64px;
+  }
+
+  .hero__content {
+    font-size: 24px;
+    letter-spacing: 10.4px;
+    width: 60%;
+    max-width: 800px;
+    &__logo {
+      flex-grow: 1;
+    }
+  }
+
+  .texture {
+    z-index: 0;
+    &__content {
+      width: 80%;
+      max-width: 1300px;
+      &__img {
+        max-width: 600px;
+      }
+      &__text {
+        margin-left: 90px;
+
+      }
+    }
+
+    &__deco {
+      z-index: -1;
+      &__upright {
+        top: 24px;
+        right: 64px;
+        width: 160px;
+      }
+      &__bottomright {
+        bottom: 0px;
+        right: 0px;
+        width: 250px;
+        transform: translateY(60px);
+      }
+    }
+  }
+
+  .life {
+    width: 100%;
+    &__content {
+      width: 100%;
+      &__text {
+        width: 50%;
+        &__container {
+          max-width: 380px;
+        }
+      }
+      &__img {
+        width: 50%;
+        img {
+          // max-width: 1200px;
+          margin-left: auto;
+        }
+      }
+
+    }
+    &__deco {
+      z-index: -1;
+      &__upleft {
+        top: -80px;
+        left: 0px;
+        width: 250px;
+      }
+    }
+  }
+}
+
