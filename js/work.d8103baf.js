@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["work"],{f126:function(t,e,n){"use strict";n.r(e);var r=function(){var t=this,e=t.$createElement;t._self._c;return t._m(0)},l=[function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"Work"},[n("h3",[t._v("貫穿維度的空間整合設計")]),n("p",[t._v("從一期一會的展覽，到長久陪伴的住所與建築，我們期待能從感知出發，打造專屬的空間。")]),t._v(" title ")])}],s=n("2877"),c={},a=Object(s["a"])(c,r,l,!1,null,null,null);e["default"]=a.exports}}]);
+//# sourceMappingURL=work.d8103baf.js.map
