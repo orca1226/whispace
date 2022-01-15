@@ -1,12 +1,15 @@
 <template>
-  <div class="home">
+  <div class="page__home">
     <Nav></Nav>
     <!-- hero section -->
     <section class="home__section hero d-flex center-center">
       <div class="hero__content d-flex align-items-center">
         <h2 class="write-vertical">絮絮空間感知研究室</h2>
         <div class="hero__content__logo d-flex center-center">
-          <img alt="whispace logo" src="../assets/logo.png">
+          <!-- <svg id="logoSvg" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#logo-sm" />
+          </svg> -->
+          <div id="logoSvg"></div>
         </div>
         <h2 class="write-vertical">時絮建築師事務所</h2>
       </div>
@@ -18,11 +21,13 @@
         </div>
         <div class="texture__content__text">
           <h3 class="texture__content__text__title __title">構築獨特的空間質地</h3>
-          <p class="mb-4" style="margin-bottom: 36px;">從人的生活可能，一起構築專屬的空間設計<br></p>
+          <!-- <p class="mb-4" style="margin-bottom: 36px;">
+            從人的生活可能，一起構築專屬的空間設計<br></p>
           <p>
             在連續細瑣的穿梭中，因感知到潛藏的秩序，會真誠理解屬於空間的美。<br>
             期待在我們創造的空間，由隱隱的感知引導，能喚醒對光線、比例的敏銳偏好，建構屬於每個人的理想生活。
-          </p>
+          </p> -->
+          <p class="breakWords" v-html="$context.home[0].content"></p>
         </div>
       </div>
       <div class="texture__deco__upright position-absolute">
@@ -46,7 +51,7 @@
               你們向我們訴說美好的過往，<br>
               我們為你們創造美好的未來，<br>
               希望可以透過彼此溫暖的話語，<br>
-              共同創造屬於最貼近你們彼此的那個居所。<br>
+              共同創造屬於最貼近你們彼此的那個居所。
             </p>
           </div>
         </div>
@@ -79,11 +84,48 @@
 
 <script>
 import Nav from '@/components/Nav.vue'
+import Vivus from 'vivus'
+import logo from '@/assets/img/svg/logo-sm.svg'
 
 export default {
   name: 'Home',
   components: {
     Nav
+  },
+  data () {
+    return {
+      logoVivus: null
+    }
+  },
+  methods: {
+    animaition () {
+      this.heroSection()
+    },
+    heroSection () {
+      this.logoVivus = new Vivus('logoSvg',
+        {
+          file: logo,
+          type: 'delayed',
+          duration: 150,
+          animTimingFunction: Vivus.EASE_OUT
+        })
+      this.$gsap.fromTo('.write-vertical', 1, {
+
+        y: 50,
+        opacity: 0,
+        stagger: 0.5
+
+      }, {
+
+        y: 0,
+        opacity: 1,
+        stagger: 0.5
+
+      })
+    }
+  },
+  mounted () {
+    this.animaition()
   }
 }
 </script>

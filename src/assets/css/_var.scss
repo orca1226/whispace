@@ -1,2 +1,27 @@
 $blue: #D9EFEF;
 $black: #000000;
+
+// === 斷點 media screen ===
+$xs: 0px;
+$ss: 480px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+@mixin media_mbToPad {
+  @media(max-width: $md){
+    @content;
+  }
+}
+@mixin media_mb {
+  @media(max-width: $ss){
+    @content;
+  }
+}
+
+@mixin media($maxWidth) {
+  @media(max-width: $maxWidth){
+    @content;
+  }
+}

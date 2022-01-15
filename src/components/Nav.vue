@@ -5,13 +5,13 @@
     </div>
     <ul class="nav__link py-2 ms-3 d-flex flex-column justify-content-between">
       <li>
-        <a href="">Whispace</a>
+        <a href="/">Whispace</a>
       </li>
       <li>
         <a href="">Workflow</a>
       </li>
       <li>
-        <a href="">Work</a>
+        <router-link :to="{name: 'work'}">Work</router-link>
       </li>
     </ul>
   </div>
@@ -25,5 +25,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+  .nav {
+    letter-spacing: 1.7 !important;
+  }
 </style>

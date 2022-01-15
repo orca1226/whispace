@@ -1,8 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC:wght@400;700|Palanquin:300,400,500,600&family=Quicksand:wght@300&display=swap');
 
 body {
-  font-family: 'Noto Serif TC', serif;
+  font-family: 'Quicksand', 'Noto Serif TC', serif;
   font-size: 16px;
 }
 h3 {
@@ -18,9 +17,10 @@ p {
 a {
   color: $black;
   text-decoration: none;
+  transition: .3s;
 }
 a:hover {
-  color: $black;
+  color: $blue;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -39,4 +39,23 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 .object-cover {
   object-fit: cover;
   width: 100%;
+}
+.title {
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.breakWords {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.customContainer {
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include media_mb {
+    width: 80%;
+  }
 }
