@@ -1,8 +1,8 @@
 <template>
-  <div class="page__home">
+  <div class="homePage">
     <Nav></Nav>
     <!-- hero section -->
-    <section class="home__section hero d-flex center-center">
+    <section class="homePage__section hero d-flex center-center">
       <div class="hero__content d-flex align-items-center">
         <h2 class="write-vertical">絮絮空間感知研究室</h2>
         <div class="hero__content__logo d-flex center-center">
@@ -14,7 +14,7 @@
         <h2 class="write-vertical">時絮建築師事務所</h2>
       </div>
     </section>
-    <section class="home__section texture d-flex center-center position-relative">
+    <section class="homePage__section texture d-flex center-center position-relative">
       <div class="texture__content d-flex align-items-center">
         <div class="texture__content__img">
           <img class="object-cover" src="../assets/img/home/section2.png" alt="">
@@ -37,7 +37,7 @@
         <img class="object-cover" src="../assets/img/home/section2-bottomright.png" alt="">
       </div>
     </section>
-    <section class="home__section life d-flex position-relative">
+    <section class="homePage__section life d-flex position-relative">
       <div class="life__content d-flex align-items-center">
         <div class="life__content__text d-flex center-center">
           <div class="life__content__text__container">
@@ -63,7 +63,7 @@
         <img class="object-cover" src="../assets/img/home/section3-upleft.png" alt="">
       </div>
     </section>
-    <section class="home__section words d-flex center-center">
+    <section class="homePage__section words d-flex center-center">
       <div class="words__content d-flex center-center">
         <div class="words__content__text">
           <h3 class="words__content__text__title __title">｢從絮語中，開始空間的創造｣</h3>
@@ -108,6 +108,9 @@ export default {
           type: 'delayed',
           duration: 150,
           animTimingFunction: Vivus.EASE_OUT
+        },
+        (obj) => {
+          obj.el.classList.add('--finished')
         })
       this.$gsap.fromTo('.write-vertical', 1, {
 
@@ -129,3 +132,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  #logoSvg svg * {
+    color: transparent;
+    transition: 1s;
+  }
+  #logoSvg svg.--finished * {
+      color: #000000;
+    }
+</style>
